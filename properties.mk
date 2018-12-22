@@ -134,3 +134,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # sdcardfs
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.sdcardfs=true
+
+# Memory optimizations
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.qti.sys.fw.bservice_enable=true
