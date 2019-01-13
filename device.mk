@@ -125,6 +125,10 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
     libbt-vendor
 
+# Lineage hals
+PRODUCT_PACKAGES += \
+    vendor.lineage.trust@1.0-service
+
 # Live Wallpapers
 PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
