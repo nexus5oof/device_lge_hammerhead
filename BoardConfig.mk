@@ -32,6 +32,7 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=hammerhea
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
+TARGET_COMPILE_WITH_MSM_KERNEL := true
 
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
