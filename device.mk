@@ -21,25 +21,25 @@
 
 
 PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/init.hammerhead.rc:root/init.hammerhead.rc \
-    device/lge/hammerhead/init.hammerhead.usb.rc:root/init.hammerhead.usb.rc \
-    device/lge/hammerhead/fstab.hammerhead:root/fstab.hammerhead \
-    device/lge/hammerhead/ueventd.hammerhead.rc:root/ueventd.hammerhead.rc
+    device/lge/hammerhead/rootdir/init.hammerhead.rc:root/init.hammerhead.rc \
+    device/lge/hammerhead/rootdir/init.hammerhead.usb.rc:root/init.hammerhead.usb.rc \
+    device/lge/hammerhead/rootdir/fstab.hammerhead:root/fstab.hammerhead \
+    device/lge/hammerhead/rootdir/ueventd.hammerhead.rc:root/ueventd.hammerhead.rc
 
 # Input device files for hammerhead
 PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-    device/lge/hammerhead/gpio-keys.kcm:system/usr/keychars/gpio-keys.kcm \
-    device/lge/hammerhead/qpnp_pon.kl:system/usr/keylayout/qpnp_pon.kl \
-    device/lge/hammerhead/qpnp_pon.kcm:system/usr/keychars/qpnp_pon.kcm \
-    device/lge/hammerhead/Button_Jack.kl:system/usr/keylayout/msm8974-taiko-mtp-snd-card_Button_Jack.kl \
-    device/lge/hammerhead/Button_Jack.kcm:system/usr/keychars/msm8974-taiko-mtp-snd-card_Button_Jack.kcm \
-    device/lge/hammerhead/hs_detect.kl:system/usr/keylayout/hs_detect.kl \
-    device/lge/hammerhead/hs_detect.kcm:system/usr/keychars/hs_detect.kcm
+    device/lge/hammerhead/config/input/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+    device/lge/hammerhead/config/input/gpio-keys.kcm:system/usr/keychars/gpio-keys.kcm \
+    device/lge/hammerhead/config/input/qpnp_pon.kl:system/usr/keylayout/qpnp_pon.kl \
+    device/lge/hammerhead/config/input/qpnp_pon.kcm:system/usr/keychars/qpnp_pon.kcm \
+    device/lge/hammerhead/config/input/Button_Jack.kl:system/usr/keylayout/msm8974-taiko-mtp-snd-card_Button_Jack.kl \
+    device/lge/hammerhead/config/input/Button_Jack.kcm:system/usr/keychars/msm8974-taiko-mtp-snd-card_Button_Jack.kcm \
+    device/lge/hammerhead/config/input/hs_detect.kl:system/usr/keylayout/hs_detect.kl \
+    device/lge/hammerhead/config/input/hs_detect.kcm:system/usr/keychars/hs_detect.kcm
 
 # Prebuilt input device calibration files
 PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/touch_dev.idc:system/usr/idc/touch_dev.idc
+    device/lge/hammerhead/config/input/touch_dev.idc:system/usr/idc/touch_dev.idc
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
@@ -47,20 +47,20 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
-    device/lge/hammerhead/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
-    device/lge/hammerhead/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    device/lge/hammerhead/mixer_paths.xml:system/etc/mixer_paths.xml
+    device/lge/hammerhead/config/media/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
+    device/lge/hammerhead/config/media/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    device/lge/hammerhead/config/media/mixer_paths.xml:system/etc/mixer_paths.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-    device/lge/hammerhead/media_codecs.xml:system/etc/media_codecs.xml \
-    device/lge/hammerhead/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
-    device/lge/hammerhead/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
+    device/lge/hammerhead/config/media/media_codecs.xml:system/etc/media_codecs.xml \
+    device/lge/hammerhead/config/media/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
+    device/lge/hammerhead/config/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 
 PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
+    device/lge/hammerhead/config/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -90,17 +90,17 @@ PRODUCT_COPY_FILES += \
 
 # For GPS
 PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/sec_config:system/etc/sec_config
+    device/lge/hammerhead/config/sec_config:system/etc/sec_config
 
 # NFC access control + feature files + configuration
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
-    device/lge/hammerhead/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/libnfc-nci.conf \
-    device/lge/hammerhead/nfc/libnfc-brcm-20791b05.conf:system/etc/libnfc-brcm-20791b05.conf
+    device/lge/hammerhead/config/nfc/libnfc-nci.conf:system/etc/libnfc-nci.conf \
+    device/lge/hammerhead/config/nfc/libnfc-brcm-20791b05.conf:system/etc/libnfc-brcm-20791b05.conf
 
 PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/thermal-engine-8974.conf:system/etc/thermal-engine-8974.conf
+    device/lge/hammerhead/config/thermal-engine-8974.conf:system/etc/thermal-engine-8974.conf
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
@@ -170,8 +170,7 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle
 
 PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
-
+    device/lge/hammerhead/config/media/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -191,7 +190,7 @@ PRODUCT_PACKAGES += \
 
 # GPS configuration
 PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/gps.conf:system/etc/gps.conf
+    device/lge/hammerhead/config/gps.conf:system/etc/gps.conf
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -384,7 +383,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
-$(call inherit-product-if-exists, vendor/qcom/gpu/msm8x74/msm8x74-gpu-vendor.mk)
+# broadcom wifi firmware
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4339/device-bcm.mk)
 
 # Vendor security patch level
