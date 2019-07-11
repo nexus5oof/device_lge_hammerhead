@@ -15,7 +15,6 @@
 #
 
 import init.hammerhead.usb.rc
-import init.hammerhead_svelte.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
@@ -29,7 +28,8 @@ on init
     symlink /sdcard /storage/sdcard0
 
 on fs
-    mount_all ./fstab.hammerhead
+    symlink /dev/block/platform/msm_sdcc.1 /dev/block/bootdevice
+    mount_all /fstab.hammerhead
     restorecon_recursive /persist
 
 on early-boot
