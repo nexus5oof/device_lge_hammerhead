@@ -262,7 +262,6 @@ on property:sys.boot_completed=1
     write /sys/module/pm_8x60/modes/cpu1/retention/idle_enabled 1
     write /sys/module/pm_8x60/modes/cpu2/retention/idle_enabled 1
     write /sys/module/pm_8x60/modes/cpu3/retention/idle_enabled 1
-    restart cameraserver
     start mpdecision
 
     # enable slimport detection
@@ -273,6 +272,9 @@ on property:sys.boot_completed=1
 
 on property:ro.debuggable=1
     start ssr_ramdump
+
+on property:init.svc.cameraserver=stopped
+    start cameraserver
 
 service rmt_storage /system/bin/rmt_storage
     class core
