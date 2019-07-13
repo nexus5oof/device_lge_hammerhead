@@ -285,6 +285,9 @@ on property:sys.boot_completed=1
 on property:ro.debuggable=1
     start ssr_ramdump
 
+on property:init.svc.cameraserver=stopped
+    start cameraserver
+
 service rmt_storage /system/bin/rmt_storage
     class core
     user root
