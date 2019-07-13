@@ -272,7 +272,8 @@ on property:sys.boot_completed=1
     write /sys/module/pm_8x60/modes/cpu1/retention/idle_enabled 1
     write /sys/module/pm_8x60/modes/cpu2/retention/idle_enabled 1
     write /sys/module/pm_8x60/modes/cpu3/retention/idle_enabled 1
-    restart cameraserver
+    stop cameraserver
+    start cameraserver
     start mpdecision
 
     # enable slimport detection
