@@ -22,6 +22,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <getopt.h>
+#include <string.h>
 
 #define LOG_TAG "bdAddrLoader"
 
