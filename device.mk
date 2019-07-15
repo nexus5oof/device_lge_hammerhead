@@ -121,6 +121,7 @@ PRODUCT_PACKAGES := \
     wpa_supplicant.conf
 
 PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-service \
     android.hardware.bluetooth@1.0-impl \
     libbt-vendor
 
@@ -222,6 +223,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
+# Trust HAL
+PRODUCT_PACKAGES += \
+    vendor.lineage.trust@1.0-service
+
 # USB HAL service
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
@@ -234,9 +239,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     bdAddrLoader
 
+# Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl \
-    power.hammerhead
+    android.hardware.power@1.1-service-qti
 
 # Thermal HAL
 PRODUCT_PACKAGES += \
