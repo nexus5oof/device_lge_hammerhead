@@ -15,6 +15,9 @@ $(call inherit-product-if-exists, vendor/lge/hammerhead/hammerhead-vendor.mk)
 # Inherit device configuration
 $(call inherit-product, device/lge/hammerhead/device.mk)
 
+# Inherit device-specific system properties
+$(call inherit-product, device/lge/hammerhead/properties.mk)
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := hammerhead
 PRODUCT_NAME := lineage_hammerhead
