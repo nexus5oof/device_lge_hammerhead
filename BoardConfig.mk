@@ -38,16 +38,6 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=hammerhea
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 
-# Shader cache config options
-# Maximum size of the  GLES Shaders that can be cached for reuse.
-# Increase the size if shaders of size greater than 12KB are used.
-MAX_EGL_CACHE_KEY_SIZE := 12*1024
-
-# Maximum GLES shader cache size for each app to store the compiled shader
-# binaries. Decrease the size if RAM or Flash Storage size is a limitation
-# of the device.
-MAX_EGL_CACHE_SIZE := 2048*1024
-
 BOARD_USES_ALSA_AUDIO := true
 USE_XML_AUDIO_POLICY_CONF := 1
 
@@ -75,10 +65,22 @@ BOARD_USES_SECURE_SERVICES := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
 
+# Display/Graphics/Media
+HAVE_ADRENO_SOURCE := false
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+MAX_EGL_CACHE_KEY_SIZE := 12*1024
+MAX_EGL_CACHE_SIZE := 2048*1024
+TARGET_USES_ION := true
+TARGET_USES_HWC2 := true
+TARGET_USES_GRALLOC1 := true
+TARGET_USES_C2D_COMPOSITION := true
+TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
+TARGET_HAS_HH_VSYNC_ISSUE := true
 VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 5000000
-TARGET_USES_ION := true
-TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x02000000U
+TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS ?= 0
+TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS += | (1 << 21)
+TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS += | (1 << 25)
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
@@ -131,10 +133,6 @@ DEVICE_MATRIX_FILE := device/lge/hammerhead/compatibility_matrix.xml
 
 # Shipping API level (for CTS backward compatibility)
 PRODUCT_SHIPPING_API_LEVEL := 19
-
-OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
-TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
-TARGET_HAS_HH_VSYNC_ISSUE := true
 
 USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY:= true
 USE_DEVICE_SPECIFIC_CAMERA:= true
