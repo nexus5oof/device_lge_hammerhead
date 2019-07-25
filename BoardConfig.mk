@@ -139,7 +139,9 @@ TARGET_HAS_HH_VSYNC_ISSUE := true
 USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY:= true
 USE_DEVICE_SPECIFIC_CAMERA:= true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
-    /system/bin/cameraserver=22
+    /system/bin/cameraserver=22 \
+    /system/bin/mediaserver=22 \
+    /system/bin/mm-qcamera-daemon=22
 
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS:= true
 
