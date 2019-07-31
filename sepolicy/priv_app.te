@@ -1,2 +1,2 @@
 allowxperm priv_app self:udp_socket ioctl { SIOCGIWESSID };
-allow priv_app sysfs_graphics:file { read };
+allow priv_app sysfs_leds:file { read };
