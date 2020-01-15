@@ -114,6 +114,8 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/lge/hammerhead
 
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.hammerhead
 
+PLATFORM_SEPOLICY_VERSION_TEST := false
+
 # QCOM selinux policies
 include device/qcom/sepolicy-legacy/sepolicy.mk
 
